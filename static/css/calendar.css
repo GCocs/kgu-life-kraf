@@ -61,7 +61,7 @@
   .fc-event-title.fc-sticky {
     /* color: transparent; */
     position: relative;
-    top: -2px; /* 위로 이동 */
+    top: 0px !important; /* 위로 이동 */
     padding: 0px;
     border-right: 3px solid white;
     background-color: white;
