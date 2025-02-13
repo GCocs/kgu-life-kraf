@@ -1,0 +1,158 @@
+/* ### calendar design ### */
+:root {
+    --fc-event-bg-color: none;
+    --fc-event-border-color: none;
+    --fc-daygrid-event-dot-width: 8px;
+    --fc-today-bg-color: #f5f5f5;
+  }
+  /* 캘린더 테두리 */
+  .fc-theme-standard .fc-scrollgrid {
+    border: 0.3px solid #d0d4c5;
+  }
+  .fc-theme-standard td,
+  .fc-theme-standard th {
+    border: 0.3px solid #d0d4c5;
+  }
+  .fc .fc-scrollgrid {
+    border-right-width: 0px;
+    border-bottom-width: 0px;
+  }
+  
+  .fc .fc-daygrid-day-number {
+    padding-bottom: 0px;
+    padding-top: 0px;
+  }
+  
+  .fc-day-sun a,
+  .fc-day-sat a {
+    /* 토요일, 일요일 컬러 */
+    color: #6d9393;
+  }
+  /* 년도,월,요일 상단바 글씨 */
+  .fc-toolbar-title,
+  .fc-scrollgrid-sync-inner > a {
+    color: #16251c;
+    font-weight: 700;
+  }
+  .fc-day-mon a,
+  .fc-day-tue a,
+  .fc-day-wed a,
+  .fc-day-thu a,
+  .fc-day-fri a {
+    color: #16251c;
+  }
+  /* 날짜 */
+  .fc-daygrid-day-number {
+    font-weight: 500;
+    font-size: 16px;
+  }
+  /* 일정 */
+  .fc-direction-ltr .fc-daygrid-event.fc-event-start,
+  .fc-direction-rtl .fc-daygrid-event.fc-event-end {
+    margin-left: 0px;
+  }
+  /* 장기일정 */
+  .fc-event-title-container {
+    background-color: white;
+    height: 15px;
+    margin: 2px;
+    border-radius: 5px;
+  }
+  .fc-event-title.fc-sticky {
+    /* color: transparent; */
+    position: relative;
+    top: -2px; /* 위로 이동 */
+    padding: 0px;
+    border-right: 3px solid white;
+    background-color: white;
+    font-weight: 500;
+  }
+  .fc-event-title.fc-sticky {
+    color: #16251c;
+    font-size: 13px;
+    font-weight: 500;
+  }
+  
+  /* 단기일정 */
+  .fc-daygrid-dot-event {
+    padding: 0px;
+  }
+  .fc .fc-daygrid-event {
+    margin: 0px;
+  }
+  
+  .fc-daygrid-dot-event .fc-event-title {
+    color: #16251c;
+    font-size: 13px;
+    font-weight: 500;
+  }
+  .fc-daygrid-event-dot {
+    --fc-event-border-color: #b0def1;
+  }
+  /* ##### 상단 툴바 ##### */
+  .fc .fc-toolbar.fc-header-toolbar {
+    padding: 10px 20px;
+  
+    font-size: 14px;
+    font-weight: 500;
+    background-color: transparent;
+  
+    border-radius: 20px;
+  }
+  
+  /* 버튼 : 누르지 않았을 때 */
+  .fc .fc-button {
+    background-color: #ffffff;
+    color: #6c757d;
+    padding: 5px 7px;
+    border: 0px;
+    border-radius: 10px;
+  }
+  
+  .fc .fc-button:hover {
+    color: #637b6e;
+  }
+  
+  /* 버튼위에 마우스 올렸을 때 */
+  .fc .fc-button-primary:hover {
+    background-color: #f5f5f5;
+    color: #16251c;
+  }
+  /* today 버튼 - 이번 달에 위치할 때 */
+  .fc .fc-today-button:disabled {
+    background-color: #f5f5f5;
+    color: #16251c;
+  }
+  
+  /*tooltip*/
+  .tippy-box {
+    font-size: 12px !important;
+    background-color: rgba(0, 0, 0, 0.8) !important;
+    color: white !important;
+    border-radius: 10px;
+    padding: 0px;
+  }
+  /* tooltip화살표 색상 */
+  .tippy-box[data-placement^="top"] > .tippy-arrow::before {
+    border-top-color: rgba(0, 0, 0, 0.8) !important;
+  }
+  
+  .calendar::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* 닉네임 버튼과 드롭다운 크기 맞추기 */
+  .dropdown-menu {
+    min-width: 100% !important;  /* 버튼 너비와 동일하게 */
+    overflow: hidden; /* 내부 요소가 튀어나오지 않도록 */
+    margin-top: 6px !important;
+    border: none !important;
+  }
+  
+  /* 드롭다운 내부 버튼 스타일 */
+  .dropdown-item {
+    color: white !important;
+    border-radius: 12px !important; /* 내부 버튼 둥글게 */
+    font-weight: bold; /* 텍스트 강조 */
+    background-color: rgba(204, 204, 204, 0.859) !important; /* 배경 흰색 */
+  }

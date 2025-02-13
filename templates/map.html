@@ -1,3 +1,9 @@
+{% block head %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/map.css') }}" />
+
+{% endblock %}
+
 {% extends "base.html" %} {% block title %}지도 | 크구라이프{% endblock %} {%
 block content %}
 <h5 class="mx-3 my-3 font-weight-bold">크구 맵</h5>

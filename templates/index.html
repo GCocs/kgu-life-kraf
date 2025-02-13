@@ -1,3 +1,12 @@
+{% block head %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/calendar.css') }}" />
+
+<!--JavaScript Libraries-->
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js"></script>
+
+{% endblock %}
+
 {% extends "base.html" %} {% block title %}홈 | 크구라이프{% endblock %} {%
 block content %}
 <script src="https://unpkg.com/@popperjs/core@2"></script>
@@ -95,8 +104,6 @@ block content %}
     </div>
   </div>
 </div>
-<!--JavaScript Libraries-->
-<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js"></script>
 
 <!--Templates JavaScript-->
 <script src="{{ url_for('static', filename='js/calendar.js') }}"></script>

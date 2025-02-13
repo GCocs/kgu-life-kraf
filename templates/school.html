@@ -1,3 +1,65 @@
+{% block head %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/school.css') }}" />
+
+<!-- school.html CSS 스타일 추가 -->
+<style>
+  .category-item {
+    display: block;
+    padding: 15px;
+    border-radius: 15px;
+    transition: background-color 0.3s;
+    
+  }
+  
+  .category-item:hover {
+    background-color: #f0f0f0;
+    text-decoration: none;
+  }
+  
+  .category-item.active {
+    font-weight: bold;
+    background-color: #f1f1f1;
+  }
+
+  .faq-item {
+    margin-bottom: 120px;
+    margin-top: 80px;
+    margin-left: 30px;
+  }
+
+  .faq-item h3 {
+    margin-bottom: 10px;
+  }
+</style>
+
+<!-- school.html JavaScript 추가 -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const defaultTopic = '크구라이프';
+    const defaultFaqContent = document.getElementById(`faq-${defaultTopic}`);
+    if (defaultFaqContent) defaultFaqContent.style.display = 'block';
+
+    document.querySelectorAll('.category-item').forEach(item => {
+      item.addEventListener('click', function(e) {
+        e.preventDefault();
+        const topic = this.textContent.trim();
+        
+        document.querySelectorAll('.faq-item').forEach(el => el.style.display = 'none');
+        
+        const faqContent = document.getElementById(`faq-${topic}`);
+        if (faqContent) faqContent.style.display = 'block';
+
+        document.querySelectorAll('.category-item').forEach(el => el.classList.remove('active'));
+        
+        this.classList.add('active');
+      });
+    });
+  });
+</script>
+
+{% endblock %}
+
 {% extends "base.html" %} {% block title %}학교생활 | 크구라이프{% endblock %}
 
 {% block content %}
@@ -175,61 +237,6 @@
   </div>
 </div>
 
-<!-- school.html CSS 스타일 추가 -->
-<style>
-  .category-item {
-    display: block;
-    padding: 15px;
-    border-radius: 15px;
-    transition: background-color 0.3s;
-    
-  }
-  
-  .category-item:hover {
-    background-color: #f0f0f0;
-    text-decoration: none;
-  }
-  
-  .category-item.active {
-    font-weight: bold;
-    background-color: #f1f1f1;
-  }
-
-  .faq-item {
-    margin-bottom: 120px;
-    margin-top: 80px;
-    margin-left: 30px;
-  }
-
-  .faq-item h3 {
-    margin-bottom: 10px;
-  }
-</style>
-
-<!-- school.html JavaScript 추가 -->
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const defaultTopic = '크구라이프';
-    const defaultFaqContent = document.getElementById(`faq-${defaultTopic}`);
-    if (defaultFaqContent) defaultFaqContent.style.display = 'block';
-
-    document.querySelectorAll('.category-item').forEach(item => {
-      item.addEventListener('click', function(e) {
-        e.preventDefault();
-        const topic = this.textContent.trim();
-        
-        document.querySelectorAll('.faq-item').forEach(el => el.style.display = 'none');
-        
-        const faqContent = document.getElementById(`faq-${topic}`);
-        if (faqContent) faqContent.style.display = 'block';
-
-        document.querySelectorAll('.category-item').forEach(el => el.classList.remove('active'));
-        
-        this.classList.add('active');
-      });
-    });
-  });
-</script>
 
 
 </div>

@@ -1,0 +1,25 @@
+/* 학교생활 페이지 css */
+.bg-beige {
+    background-color: rgb(252, 242, 228);
+  }
+  .bg-yeondoo {
+    background-color: rgb(230, 252, 228);
+  }
+  
+  .bg-grey {
+    background-color: rgb(234, 234, 234);
+  }
+  .bg-skyblue {
+    background-color: rgb(231, 228, 252);
+  }
+  
+  .custom-rounded2 {
+    border-radius: 30px;
+  }
+  
+  #hover {
+    transition: filter 0.2s ease;
+  }
+  #hover:hover {
+    filter: brightness(0.9);
+  }
