@@ -5,6 +5,7 @@ from email.mime.text import MIMEText
 import random
 from flask import session
 
+# 이메일 전송 함수
 def send_email(email) : 
     full_email = email + '@kyonggi.ac.kr'
     authCode = str(random.randint(100000, 999999))

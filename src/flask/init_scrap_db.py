@@ -4,14 +4,16 @@ from pymongo import MongoClient
 from dotenv import load_dotenv
 import os
 
-#.env파일 로드
+# .env파일 로드
 load_dotenv()
 
+# DB
 db_uri = os.getenv('DB_URI')
 client = MongoClient(db_uri)
 db = client.kraf
 headers = {'User-Agent' : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36'}
 
+# 학과 공지사항 스크래핑 -> DB 저장
 def insert_department_notice():
     data = requests.get('https://www.kyonggi.ac.kr/u_computer/selectBbsNttList.do?key=2161&bbsNo=565', headers=headers)
     soup = BeautifulSoup(data.text, 'html.parser')
@@ -32,6 +34,7 @@ def insert_department_notice():
         }
         db.department_notice.insert_one(doc)
 
+# 학사일정 스크래핑 -> DB 저장
 def insert_academic_calendar() :
     data = requests.get('https://www.kyonggi.ac.kr/www/selectTnSchafsSchdulListUS.do?key=5695&sc1=10', headers=headers)
     soup = BeautifulSoup(data.text, 'html.parser')
